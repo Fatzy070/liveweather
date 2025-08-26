@@ -1,82 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        body {
-            height: 98vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        main {
-            text-align: center;
-        }
-        input{
-            width: 70%;
-            height: 50px;
-            border: 2px solid black;
-            padding-left: 10px;
-            font-size: 1.1rem;
-        }
-        button {
-            width: 50%;
-            margin: 1rem 0rem;
-            height: 50px;
-            font-size: 1.3rem;
-        }
-        h1 {
-            font-size: 2rem;
-            color: brown;
-        }
-        h1 sub {
-            color: rgb(95, 75, 75);
-        }
-        button {
-    width: 50%;
-    margin: 1rem 0rem;
-    height: 50px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, #0077ff, #00c6ff); /* blue gradient */
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-button:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 6px 15px rgba(0, 119, 255, 0.4);
-}
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #6dd5fa, #2980b9);
+    }
 
-button:active {
-    transform: translateY(0) scale(0.98);
-    box-shadow: 0 3px 8px rgba(0, 119, 255, 0.3);
-}
+    main {
+      width: 90%;
+      max-width: 450px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
 
-    </style>
+    h1 {
+      font-size: 2.2rem;
+      color: #2980b9;
+      margin-bottom: 1rem;
+    }
+
+    h1 sub {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #2980b9;
+      border-radius: 12px;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #6dd5fa;
+      box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #2980b9, #6dd5fa);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    button:active {
+      transform: translateY(0) scale(0.97);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #WeatherResult {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #f7f9fc;
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #333;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body>
-     <main>
-        <div class="weather">
-            <h1>Weather <sub>App</sub></h1>
-            <input type="text" id="cityinput" >
-            <button onclick="getweather()">Get Weather</button>
-            <div id="WeatherResult">
+  <main>
+    <div class="weather">
+      <h1>Weather <sub>App</sub></h1>
+      <input type="text" id="cityinput" placeholder="Enter city name..." />
+      <button onclick="getweather()">Get Weather</button>
+      <div id="WeatherResult">
+        <!-- Weather result will show here -->
+      </div>
+    </div>
+  </main>
 
-            </div>
-        </div>
-     </main>
-    <script src="weather.js"></script>
+  <script src="weather.js"></script>
 </body>
 </html>
